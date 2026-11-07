@@ -27,6 +27,10 @@
     li + li { margin-top: 8px; }
     code { padding: 2px 6px; border-radius: 4px; background: #29372e; color: #f5deaa; font: 0.9em ui-monospace, monospace; white-space: nowrap; }
     .path { display: block; margin: 10px 0; padding: 10px; white-space: normal; overflow-wrap: anywhere; }
+    .folder-tree { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); overflow-x: auto; line-height: 1.5; }
+    .folder-tree code { padding: 0; background: none; color: var(--text); font-size: 14px; white-space: pre; }
+    details { margin-top: 18px; }
+    summary { cursor: pointer; color: var(--gold); }
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
     table { width: 100%; border-collapse: collapse; font-size: 15px; }
     th, td { text-align: left; vertical-align: top; padding: 12px 14px; }
@@ -71,25 +75,33 @@
     </section>
 
     <section aria-labelledby="install">
-      <h2 id="install">Как установить RestedXP из этого ZIP</h2>
-      <p>Это архив самого аддона, а не строка для импорта гайда. Через кнопку «Импорт» внутри игры его загружать не нужно.</p>
+      <h2 id="install">Как установить RestedXP</h2>
+      <p><strong>Нужно просто скопировать одну папку.</strong> Сам ZIP никуда импортировать не надо — нужна распакованная папка RXPGuides.</p>
       <ol>
-        <li><strong>Полностью закрой WoW.</strong> Одного выхода на экран персонажей недостаточно.</li>
-        <li><a href="./RXPGuides.zip" download="RXPGuides.zip">Скачай RXPGuides.zip</a> и распакуй архив. Найди папку <strong>RXPGuides</strong>, внутри которой лежит файл <strong>RXPGuides.toc</strong>. Если распаковщик создал две вложенные папки RXPGuides, нужна внутренняя.</li>
-        <li>Открой папку установленного <strong>WoW Forever</strong> через Battle.net. Перейди в <strong>_forever_ → Interface → AddOns</strong>, не в папку Retail или другой версии игры.
-          <small>Windows: путь зависит от выбранного места установки.</small>
-          <code class="path">World of Warcraft\_forever_\Interface\AddOns\</code>
-          <small>macOS: при стандартной установке.</small>
-          <code class="path">/Applications/World of Warcraft/_forever_/Interface/AddOns/</code>
-        </li>
-        <li>Если в AddOns уже есть RXPGuides, перенеси старую папку в резервную копию <strong>за пределами AddOns</strong>. Затем скопируй сюда новую RXPGuides. На macOS не выбирай «Сохранить обе»: не должно появиться второй копии аддона. <strong>Папку WTF не удаляй и не заменяй</strong> — там настройки и сохранённый прогресс.</li>
-        <li>Проверь итоговый путь — без лишней папки между AddOns и RXPGuides:
-          <code class="path">_forever_/Interface/AddOns/RXPGuides/RXPGuides.toc</code>
-        </li>
-        <li>Запусти WoW Forever. На экране выбора персонажа открой <strong>«Модификации» / AddOns</strong> и проверь, что <strong>RestedXP Guides</strong> включён.</li>
-        <li>В игре открой меню RestedXP через его кнопку у миникарты или меню окна гайда. Для Орды выбирай <strong>RestedXP Forever Guide (H)</strong> и подходящий маршрут. Команда <code>/rxp</code> открывает настройки. Если окно гайда было скрыто, <code>/rxp show</code> переключает его видимость.</li>
+        <li><strong>Полностью закрой WoW.</strong></li>
+        <li><a href="./RXPGuides.zip" download="RXPGuides.zip">Скачай RXPGuides.zip</a> и <strong>распакуй архив</strong>.</li>
+        <li>Найди внутри папку <strong>RXPGuides</strong>, в которой лежит <strong>RXPGuides.toc</strong>. Если есть две вложенные папки RXPGuides, бери внутреннюю.</li>
+        <li>Скопируй <strong>всю эту папку RXPGuides</strong> в папку игры: <strong>_forever_ → Interface → AddOns</strong>.</li>
+        <li>Запусти WoW Forever → на экране выбора персонажа открой <strong>«Модификации» / AddOns</strong> → включи <strong>RestedXP Guides</strong>.</li>
       </ol>
-      <p><strong>Проверка версии:</strong> в установленном RXPGuides.toc должна быть строка <code>## Version: v4.11.33</code>. В этом архиве обычные маршруты Орды для Forever идут до 22-го уровня; полного 1–60 он не обещает.</p>
+      <p><strong>В итоге папки должны выглядеть так:</strong></p>
+      <pre class="folder-tree"><code>World of Warcraft
+└── _forever_
+    └── Interface
+        └── AddOns
+            └── RXPGuides
+                ├── RXPGuides.toc
+                └── остальные файлы</code></pre>
+      <p><strong>Если RestedXP уже установлен:</strong> сначала сохрани старую RXPGuides за пределами AddOns, затем скопируй новую. Не оставляй две копии аддона. <strong>Папку WTF не трогай</strong> — там настройки и прогресс.</p>
+      <details>
+        <summary>Где найти папку игры на Windows или macOS?</summary>
+        <p>В Battle.net выбери WoW Forever → шестерёнка рядом с кнопкой запуска → «Показать в проводнике» или «Показать в Finder». В открывшейся папке найди _forever_, затем Interface → AddOns.</p>
+        <small>Windows: место установки может отличаться, но конец пути такой:</small>
+        <code class="path">World of Warcraft\_forever_\Interface\AddOns\</code>
+        <small>macOS: при стандартной установке:</small>
+        <code class="path">/Applications/World of Warcraft/_forever_/Interface/AddOns/</code>
+      </details>
+      <p>После установки выбери в меню RestedXP <strong>RestedXP Forever Guide (H)</strong> для Орды и подходящий маршрут. <code>/rxp</code> открывает настройки.</p>
     </section>
 
     <section aria-labelledby="addons">
