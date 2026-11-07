@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Короткая памятка по настроенной сборке аддонов WoW Forever: сумки, квесты, озвучка, профессии, экипировка и основные команды.">
+  <meta name="color-scheme" content="dark light">
+  <title>WoW Forever — аддоны и команды</title>
+  <style>
+    :root { color-scheme: dark; --bg: #111715; --panel: #1a231f; --text: #edf1e9; --muted: #b4bfb4; --gold: #f0cc78; --line: #354238; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 system-ui, sans-serif; }
+    main { max-width: 960px; margin: auto; padding: 36px 24px 56px; }
+    a { color: var(--gold); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+    header { margin-bottom: 32px; }
+    .date, .back, footer { color: var(--muted); font-size: 14px; }
+    .date { margin: 24px 0 6px; }
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 16px; color: var(--gold); font-size: clamp(30px, 6vw, 48px); }
+    h2 { margin: 0 0 18px; font-size: 25px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0 0 14px; }
+    section { margin-top: 34px; }
+    ul { margin: 0; padding-left: 24px; }
+    li + li { margin-top: 8px; }
+    code { padding: 2px 6px; border-radius: 4px; background: #29372e; color: #f5deaa; font: 0.9em ui-monospace, monospace; white-space: nowrap; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { text-align: left; vertical-align: top; padding: 12px 14px; }
+    th { background: var(--panel); color: var(--gold); }
+    tbody tr + tr { border-top: 1px solid var(--line); }
+    td:first-child { width: 30%; }
+    td:last-child { width: 23%; }
+    small { display: block; color: var(--muted); font-size: 13px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    article, .note { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    article p:last-child, .note p:last-child { margin-bottom: 0; }
+    .note { border-left: 3px solid var(--gold); }
+    footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
+    @media (max-width: 620px) {
+      main { padding: 22px 16px 36px; }
+      .cards { grid-template-columns: 1fr; }
+      th, td { padding: 10px 9px; }
+      table { font-size: 13px; }
+      td:first-child { overflow-wrap: anywhere; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="back" href="/">← На главную</a>
+      <p class="date">Конфигурация на <time datetime="2026-11-07">7 ноября 2026</time></p>
+      <h1>WoW Forever: аддоны и команды</h1>
+      <p>Памятка для жреца Орды: ШП для квестов, лечение обычных данжей, портняжное дело и наложение чар. Без двух аддонов на одни и те же сумки или двух озвучек одновременно.</p>
+    </header>
+
+    <section aria-labelledby="addons">
+      <h2 id="addons">Что установлено</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Аддон</th><th scope="col">Зачем</th><th scope="col">Как открыть</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EllesmereUI</strong><small>9.7.4</small></td><td>Панели, рамки игрока и группы, баффы, чат и счётчики боя.</td><td><code>/eui</code><br><code>/unlock</code> — перемещение</td></tr>
+            <tr><td><strong>Baganator + Syndicator</strong><small>839 + 289</small></td><td>Сумки с категориями, поиском и учётом предметов. Вместо сумок EUI.</td><td>Кнопка сумки; шестерёнка — настройки</td></tr>
+            <tr><td><strong>Questie + QuestieDB</strong><small>12.6.2 + 1.0.11</small></td><td>Квестодатели и цели заданий на карте. Оба пакета обновлены.</td><td><code>/questie</code></td></tr>
+            <tr><td><strong>RestedXP Guides</strong><small>4.11.33</small></td><td>Пошаговые маршруты прокачки. Установлен из предоставленного ZIP.</td><td>Окно RestedXP и его меню гайдов</td></tr>
+            <tr><td><strong>CatQuest + Voices + Books</strong><small>1.0.0</small></td><td>Русские аудиопаки квестов, книг и лора.</td><td><code>/cq</code><br><code>/cq options</code></td></tr>
+            <tr><td><strong>Mastercraft</strong><small>1.8.6</small></td><td>Прокачка профессий, рецепты, материалы и затраты; использует цены Auctionator.</td><td><code>/mc</code></td></tr>
+            <tr><td><strong>AtlasLoot Classic Forever</strong><small>1.3.2</small></td><td>Справочник добычи и источников экипировки. Установлена версия для Forever.</td><td><code>/al</code></td></tr>
+            <tr><td><strong>Forever Leveling BiS</strong><small>1.0.5</small></td><td>Оценка вещей из квестов, данжей, крафта и BoE под уровень и специализацию.</td><td><code>/bis</code></td></tr>
+            <tr><td><strong>Naowh Forever</strong><small>1.2.3</small></td><td>Журнал данжей, квесты, маршруты и планировщик обучения.</td><td><code>/nf</code><br><code>/nfjournal</code><br><code>/nftraining</code></td></tr>
+            <tr><td><strong>Auctionator</strong><small>341</small></td><td>Привычные поиск, покупка и продажа на аукционе. Его оставили вместо Forge.</td><td>У аукциониста</td></tr>
+            <tr><td><strong>Easy Disenchant</strong><small>1.2.2</small></td><td>Очередь вещей для распыления. Каждое распыление требует действия игрока.</td><td><code>/ede</code></td></tr>
+            <tr><td><strong>Forever Loot Sparkles</strong><small>1.3.1</small></td><td>Искры на добыче и дополнительные эффекты на объектах.</td><td>Настройки → Аддоны → Forever Loot Sparkles</td></tr>
+            <tr><td><strong>Leatrix Maps / Plus</strong><small>1.60.27</small></td><td>Карта и бытовые удобства. Дублирующие функции EUI/Naowh лучше не включать одновременно.</td><td>Кнопки аддонов у миникарты</td></tr>
+            <tr><td><strong>SpellCoda Forever</strong><small>0.63</small></td><td>Расчётные значения урона и лечения в подсказках и на значках заклинаний.</td><td>Подсказки и значки способностей</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">Что отключено и сохранено</h2>
+      <ul>
+        <li><strong>EllesmereUIBags выключен, Baganator включён.</strong> Остальные модули EUI оставлены.</li>
+        <li><strong>ForeverForge и ForeverForge Auction выключены.</strong> Auctionator включён.</li>
+        <li><strong>VuhDo и VuhDoOptions выключены.</strong> Рамки группы остаются за EUI.</li>
+        <li>Перед заменой RestedXP сохранена копия старой версии в папке <strong>WoW-addon-backups</strong> в «Загрузках». Сохранённые настройки и прогресс не изменены.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="quick">
+      <h2 id="quick">Частые действия</h2>
+      <div class="cards">
+        <article>
+          <h3>Подобрать экипировку</h3>
+          <p><code>/bis</code> → <strong>Talent spec</strong> → Discipline или Shadow → <strong>Best in slot</strong>.</p>
+          <p>Для квестов перед данжем: <strong>Dungeon loot → нужный данж → Summary → Pick up before you go</strong>. Кнопка <strong>Pin giver</strong> ставит метку квестодателя.</p>
+        </article>
+        <article>
+          <h3>Переместить отслеживаемые баффы</h3>
+          <p>Закрыть редактор Blizzard → <code>/unlock</code> → перетащить <strong>CDM: Баффы</strong> в EUI.</p>
+          <p>Не путать с «Полосой боя». EUI намеренно блокирует перемещение своих CDM-блоков через редактор Blizzard.</p>
+        </article>
+        <article>
+          <h3>Разобраться с английским голосом</h3>
+          <p>Сразу после реплики: <code>/cq report</code>. <strong>r=pack</strong> — запись из пака; <strong>r=tts</strong> — запасной синтезатор речи.</p>
+          <p>После добавления звуковых файлов нужен <strong>полный перезапуск WoW</strong>, не только <code>/reload</code>.</p>
+        </article>
+        <article>
+          <h3>Убрать напоминание о полётах</h3>
+          <p><code>/nf</code> → <strong>Удобства → Путешествие → Напоминание о точке полета</strong> → выключить.</p>
+          <p>Это отключает жёлтую надпись, а не весь планировщик маршрутов.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="limits">
+      <h2 id="limits">Важные оговорки</h2>
+      <div class="note">
+        <ul>
+          <li><strong>RestedXP:</strong> в проверенном ZIP обычные маршруты Орды для Forever доходят до 22-го уровня. Полный гайд 1–60 этим архивом не подтверждён. Для Windows сохрани ZIP отдельно: его содержимое не синхронизируется через CurseForge.</li>
+          <li><strong>BiS и таланты Naowh:</strong> «My BiS» и «Сборки» — личные планы; пустой список не означает поломку. План талантов ещё не подтверждён как импортированный в игре.</li>
+          <li><strong>Русский Naowh включён, но перевод неполный:</strong> часть названий данжей, боссов и адресов остаётся английской.</li>
+          <li><strong>Baganator 839:</strong> встроенного счётчика «занято / всего» в окне не найдено. Число в категории «Пусто» показывает свободные ячейки соответствующего типа.</li>
+          <li><strong>Оценка вещей — не гарантия:</strong> рейтинги зависят от весов характеристик и полноты базы. Не распыляй вещь только потому, что она попала в очередь.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Проверены установленные файлы, версии и сохранённые переключатели аддонов. Все игровые сценарии отдельно не проверялись. Эта страница описывает конкретную конфигурацию, а не обязательный набор для каждого игрока.</p>
+    </footer>
+  </main>
+</body>
+</html>
