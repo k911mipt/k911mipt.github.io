@@ -26,6 +26,7 @@
     ul { margin: 0; padding-left: 24px; }
     li + li { margin-top: 8px; }
     code { padding: 2px 6px; border-radius: 4px; background: #29372e; color: #f5deaa; font: 0.9em ui-monospace, monospace; white-space: nowrap; }
+    .path { display: block; margin: 10px 0; padding: 10px; white-space: normal; overflow-wrap: anywhere; }
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
     table { width: 100%; border-collapse: collapse; font-size: 15px; }
     th, td { text-align: left; vertical-align: top; padding: 12px 14px; }
@@ -63,9 +64,32 @@
       <h2 id="download">Архив RestedXP</h2>
       <div class="note">
         <a class="download" href="./RXPGuides.zip" download="RXPGuides.zip">Скачать RXPGuides.zip · 34,4 МБ</a>
+        <p><a href="#install">Как установить RestedXP на Windows или macOS ↓</a></p>
         <p>Версия <strong>4.11.33</strong>, тот же архив, из которого установлен аддон. Без изменений. Это не подтверждённый полный маршрут Forever 1–60.</p>
         <small>Авторы: <a href="https://github.com/RestedXP/RXPGuides">RestedXP</a>. Лицензия из архива: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>; лицензии включённых библиотек сохранены внутри.</small>
       </div>
+    </section>
+
+    <section aria-labelledby="install">
+      <h2 id="install">Как установить RestedXP из этого ZIP</h2>
+      <p>Это архив самого аддона, а не строка для импорта гайда. Через кнопку «Импорт» внутри игры его загружать не нужно.</p>
+      <ol>
+        <li><strong>Полностью закрой WoW.</strong> Одного выхода на экран персонажей недостаточно.</li>
+        <li><a href="./RXPGuides.zip" download="RXPGuides.zip">Скачай RXPGuides.zip</a> и распакуй архив. Найди папку <strong>RXPGuides</strong>, внутри которой лежит файл <strong>RXPGuides.toc</strong>. Если распаковщик создал две вложенные папки RXPGuides, нужна внутренняя.</li>
+        <li>Открой папку установленного <strong>WoW Forever</strong> через Battle.net. Перейди в <strong>_forever_ → Interface → AddOns</strong>, не в папку Retail или другой версии игры.
+          <small>Windows: путь зависит от выбранного места установки.</small>
+          <code class="path">World of Warcraft\_forever_\Interface\AddOns\</code>
+          <small>macOS: при стандартной установке.</small>
+          <code class="path">/Applications/World of Warcraft/_forever_/Interface/AddOns/</code>
+        </li>
+        <li>Если в AddOns уже есть RXPGuides, перенеси старую папку в резервную копию <strong>за пределами AddOns</strong>. Затем скопируй сюда новую RXPGuides. На macOS не выбирай «Сохранить обе»: не должно появиться второй копии аддона. <strong>Папку WTF не удаляй и не заменяй</strong> — там настройки и сохранённый прогресс.</li>
+        <li>Проверь итоговый путь — без лишней папки между AddOns и RXPGuides:
+          <code class="path">_forever_/Interface/AddOns/RXPGuides/RXPGuides.toc</code>
+        </li>
+        <li>Запусти WoW Forever. На экране выбора персонажа открой <strong>«Модификации» / AddOns</strong> и проверь, что <strong>RestedXP Guides</strong> включён.</li>
+        <li>В игре открой меню RestedXP через его кнопку у миникарты или меню окна гайда. Для Орды выбирай <strong>RestedXP Forever Guide (H)</strong> и подходящий маршрут. Команда <code>/rxp</code> открывает настройки. Если окно гайда было скрыто, <code>/rxp show</code> переключает его видимость.</li>
+      </ol>
+      <p><strong>Проверка версии:</strong> в установленном RXPGuides.toc должна быть строка <code>## Version: v4.11.33</code>. В этом архиве обычные маршруты Орды для Forever идут до 22-го уровня; полного 1–60 он не обещает.</p>
     </section>
 
     <section aria-labelledby="addons">
@@ -77,7 +101,7 @@
             <tr><td><strong>EllesmereUI</strong><small>9.7.4</small></td><td>Панели, рамки игрока и группы, баффы, чат и счётчики боя.</td><td><code>/eui</code><br><code>/unlock</code> — перемещение</td></tr>
             <tr><td><strong>Baganator + Syndicator</strong><small>839 + 289</small></td><td>Сумки с категориями, поиском и учётом предметов. Вместо сумок EUI.</td><td>Кнопка сумки; шестерёнка — настройки</td></tr>
             <tr><td><strong>Questie + QuestieDB</strong><small>12.6.2 + 1.0.11</small></td><td>Квестодатели и цели заданий на карте. Оба пакета обновлены.</td><td><code>/questie</code></td></tr>
-            <tr><td><strong>RestedXP Guides</strong><small>4.11.33</small></td><td>Пошаговые маршруты прокачки. Установлен из предоставленного ZIP.</td><td>Окно RestedXP и его меню гайдов</td></tr>
+            <tr><td><strong>RestedXP Guides</strong><small>4.11.33</small></td><td>Пошаговые маршруты прокачки. Установлен из предоставленного ZIP.</td><td><code>/rxp</code> — настройки<br><a href="#install">Установка из ZIP</a></td></tr>
             <tr><td><strong>CatQuest + Voices + Books</strong><small>1.0.0</small></td><td>Русские аудиопаки квестов, книг и лора.</td><td><code>/cq</code><br><code>/cq options</code></td></tr>
             <tr><td><strong>Mastercraft</strong><small>1.8.6</small></td><td>Прокачка профессий, рецепты, материалы и затраты; использует цены Auctionator.</td><td><code>/mc</code></td></tr>
             <tr><td><strong>AtlasLoot Classic Forever</strong><small>1.3.2</small></td><td>Справочник добычи и источников экипировки. Установлена версия для Forever.</td><td><code>/al</code></td></tr>
